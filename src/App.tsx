@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from "react";
-import Logo from "./assets/img/logo.png";
+import Home from "./components/home.tsx";
+import LogoStructure from "./assets/img/logoStructure.png";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import OptionsMenu from "@mui/icons-material/Apps";
 import { Typography } from "@mui/material";
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("theme") === "dark"
-  );
+  const getInitialTheme = () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      return savedTheme === "dark";
+    }
+
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return prefersDark;
+  };
+
+  const [darkMode, setDarkMode] = useState(getInitialTheme);
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -27,56 +36,29 @@ export default function App() {
 
   return (
     <div
-      className={`relative min-h-screen overflow-hidden bg-white text-gray-900 dark:bg-gray-900 dark:text-white`}
+      className={`relative min-h-screen overflow-hidden bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text`}
     >
-      <div className="absolute top-4 w-full flex justify-between items-center px-4 z-50">
-        <img src={Logo} alt="Logo" className="w-20 h-20" />
+      <div className="absolute w-full flex justify-between items-center px-20 top-16 z-50">
+        <img src={LogoStructure} alt="Logo" className="w-16 h-16" />
 
         <div className="flex items-center space-x-4">
-        <Typography className="text-sm cursor-pointer">EN</Typography>
+          <Typography className="text-sm cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover">pt-BR</Typography>
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none transition z-50"
+            className="p-2 rounded-full bg-light-element dark:bg-dark-element hover:bg-light-hover dark:hover:bg-dark-hover focus:outline-none transition z-50"
           >
             {darkMode ? (
-              <LightModeIcon className="text-gray-900 dark:text-white" />
+              <LightModeIcon className="text-light-text dark:text-dark-text hover:text-light-textHover dark:hover:text-dark-textHover" />
             ) : (
-              <DarkModeIcon className="text-gray-900 dark:text-white" />
+              <DarkModeIcon className="text-light-text dark:text-dark-text hover:text-light-textHover dark:hover:text-dark-textHover" />
             )}
           </button>
-          <OptionsMenu className="cursor-pointer text-gray-900 dark:text-white" />
+          <OptionsMenu className="cursor-pointer text-light-text dark:text-dark-text hover:text-light-textHover dark:hover:text-dark-textHover" />
         </div>
       </div>
-
+      <Home />
       <div className="absolute inset-0 flex justify-center items-center overflow-hidden z-0">
-        <div className="w-[500px] h-[500px] bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 rounded-full opacity-40 blur-3xl animate-pulse dark:from-gray-300 dark:via-gray-400 dark:to-gray-500"></div>
-        <div className="w-[400px] h-[400px] bg-gradient-to-r from-gray-800 to-gray-700 rounded-full opacity-30 blur-2xl animate-pulse dark:from-gray-400 dark:to-gray-300"></div>
-      </div>
-
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-          Oi, meu nome é <span>Felipe França</span>
-        </h1>
-        <h2 className="text-2xl md:text-3xl font-light mt-4">
-          é um prazer tê-lo interessado em meus trabalhos
-        </h2>
-        <p className="text-lg md:text-xl mt-4">
-          Sou desenvolvedor Full Stack & UX/UI designer
-        </p>
-        <div className="flex space-x-6 mt-6">
-          <a
-            href="#projects"
-            className="text-lg font-medium text-purple-950 hover:text-blue-300 transition-colors"
-          >
-            → Veja meus projetos
-          </a>
-          <a
-            href="#about"
-            className="text-lg font-medium text-purple-950 hover:text-blue-300 transition-colors"
-          >
-            → Sobre mim
-          </a>
-        </div>
+        <div className="w-[1000px] h-[1000px] bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 dark:from-gray-200 dark:via-gray-300 dark:to-gray-400 rounded-full opacity-30 blur-[200px]"></div>
       </div>
     </div>
   );
