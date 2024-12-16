@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Home from "./components/home.tsx";
+import Home from "./components/projectList";
 import LogoStructure from "./assets/img/logoStructure.png";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
