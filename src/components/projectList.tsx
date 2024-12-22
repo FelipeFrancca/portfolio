@@ -1,114 +1,70 @@
-import { JSX, useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
+import Img1 from "../assets/img/img1.png";
 
-interface Project {
-  id: number;
-  name: string;
-  category: string;
-  preview: string;
-  caminho: string;
-}
+type CardProps = {
+  image: string;
+  title: string;
+  date: string;
+  description: string;
+};
 
-const projects: Project[] = [
-  {
-    id: 1,
-    name: "Loja virtual",
-    category: "Desenvolvimento web",
-    preview: "https://i.ytimg.com/vi/jSJugUaCtFI/maxresdefault.jpg",
-    caminho: "/projeto1",
-  },
-  {
-    id: 2,
-    name: "Fake Trello",
-    category: "Desenvolvimento Web",
-    preview: "https://upload.wikimedia.org/wikipedia/pt/6/6e/Zor%C3%A3o.png",
-    caminho: "/projeto2",
-  },
-  {
-    id: 3,
-    name: "Login page",
-    category: "Design UX/UI",
-    preview:
-      "https://static.wikia.nocookie.net/onepiece/images/a/af/Tony_Tony_Chopper_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width/360?cb=20240727231850&path-prefix=pt",
-    caminho: "/projeto3",
-  },
-  {
-    id: 4,
-    name: "Consumo de API",
-    category: "Desenvolvimento Web",
-    preview: "https://i.ytimg.com/vi/jSJugUaCtFI/maxresdefault.jpg",
-    caminho: "/projeto4",
-  },
-];
-
-export default function ProjectList(): JSX.Element {
-  const [currentProject, setCurrentProject] = useState<Project>(projects[0]);
-  const [hoveredProjectId, setHoveredProjectId] = useState<number | null>(null);
-
+const Card: React.FC<CardProps> = ({ image, title, date, description }) => {
   return (
-    <div className="flex flex-col h-screen text-white">
-      <motion.div
-        className="flex-1 flex items-center justify-center"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.9 }}
-        transition={{ duration: 0.5 }}
+    <div className="group relative w-72 h-72 bg-light-background dark:bg-dark-background rounded-[40px] shadow-lg transition-all duration-500 overflow-hidden hover:h-[420px]">
+      <div
+        className="relative w-full h-[260px] bg-cover bg-center transition-all duration-500"
+        style={{ backgroundImage: `url(${image})` }}
       >
-        {currentProject && (
-          <a
-            href={currentProject.caminho}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cursor-pointer"
-          >
-            <img
-              src={currentProject.preview}
-              alt={`Preview do projeto ${currentProject.name}`}
-              width={500}
-              height={300}
-              className="h-80 w-full object-cover rounded-tl-3xl rounded-br-3xl"
-            />
-          </a>
-        )}
-      </motion.div>
-
-      <div className="h-64 overflow-y-auto scroll-container">
-        <ul className="divide-y divide-gray-700">
-          {projects.map((project) => (
-            <li
-              key={project.id}
-              role="link"
-              tabIndex={0}
-              className={`p-4 flex justify-between items-center cursor-pointer relative group ${
-                currentProject.id === project.id
-                  ? "bg-gray-800"
-                  : "bg-transparent"
-              }`}
-              onClick={() => {
-                console.log(`Projeto ${project.name} selecionado.`);
-                setCurrentProject(project);
-              }}
-              onMouseEnter={() => setHoveredProjectId(project.id)}
-              onMouseLeave={() => setHoveredProjectId(null)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") setCurrentProject(project);
-              }}
-            >
-              <a href={project.caminho} className="w-full block">
-                {hoveredProjectId === project.id && (
-                  <span className="absolute left-0 top-1/2 transform -translate-y-1/2 text-gray-300">
-                    →
-                  </span>
-                )}
-                <div className="flex justify-between w-full">
-                  <span className="text-lg">{project.name}</span>
-                  <span className="text-gray-400">{project.category}</span>
-                </div>
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="absolute bottom-[-40px] w-full h-[80px] bg-light-background dark:bg-dark-background rounded-[40px]"></div>
+        <div className="absolute right-0 bottom-[40px] w-[80px] h-[80px] bg-transparent rounded-full shadow-[75px_70px_0_40px_theme(colors.light.background)] dark:shadow-[75px_70px_0_40px_theme(colors.dark.background)]"></div>
+      </div>
+      <div className="relative z-10 top-[-55px] p-6">
+        <h3 className="relative text-lg font-medium text-light-text dark:text-dark-text">
+          {title}
+          <br />
+          <span className="absolute bottom-[-18px] left-0 text-sm font-light opacity-75">
+            {date}
+          </span>
+        </h3>
+        <p className="relative mt-6 text-light-text dark:text-dark-text opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+          {description}
+        </p>
       </div>
     </div>
   );
-}
+};
+
+const RevealCards: React.FC = () => {
+  const cardsData = [
+    {
+      image: Img1,
+      title: "Página de login",
+      date: "28/10/2023",
+      description:
+        "Uma simples pagina de login criada para praticar noções de design e interface do usuário.",
+    },
+    {
+      image: Img1,
+      title: "Fake Trello",
+      date: "05/04/2024",
+      description:
+        'Projeto kanban desenvolvido em React.js para por em prática habilidades de "drag and drop" com layout baseado no site Trello.',
+    },
+  ];
+
+  return (
+    <div className="flex items-center gap-12 justify-center min-h-screen">
+      {cardsData.map((card, index) => (
+        <Card
+          key={index}
+          image={card.image}
+          title={card.title}
+          date={card.date}
+          description={card.description}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default RevealCards;
