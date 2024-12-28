@@ -3,7 +3,7 @@ import React from "react";
 export default function Home() {
   return (
     <div>
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center" style={{ height: "calc(100% - 13rem)" }}>
         <h1 className="text-4xl md:text-5xl font-bold leading-tight text-light-text dark:text-dark-text transition-colors">
           Oi, meu nome é <span>Felipe França</span>
         </h1>
