@@ -1,63 +1,18 @@
 import React from "react";
-import Img1 from "../assets/img/img1.png";
-import ProjectListCard from "./components/projectListCard";
 
 const RevealCards: React.FC = () => {
-  const cardsData = [
-    {
-      image: Img1,
-      title: "Página de login",
-      date: "28/10/2023",
-      description:
-        "Uma simples pagina de login criada para praticar noções de design e interface do usuário.",
-      info: "Expandir",
-    },
-    {
-      image: Img1,
-      title: "Fake Trello",
-      date: "05/04/2024",
-      description:
-        'Projeto kanban desenvolvido em React.js para por em prática habilidades de "drag and drop" com layout baseado no site Trello.',
-      info: "Expandir",
-    },
-    {
-      image: Img1,
-      title: "Página de login",
-      date: "28/10/2023",
-      description:
-        "Uma simples pagina de login criada para praticar noções de design e interface do usuário.",
-      info: "Expandir",
-    },
-    {
-      image: Img1,
-      title: "Fake Trello",
-      date: "05/04/2024",
-      description:
-        'Projeto kanban desenvolvido em React.js para por em prática habilidades de "drag and drop" com layout baseado no site Trello.',
-      info: "Expandir",
-    },
-  ];
-
   return (
-    <div className="flex flex-col w-3/4 items-center gap-12 justify-center">
-      <div className="flex justify-between items-center w-full">
-        <h1 className="text-4xl font-medium text-light-text dark:text-dark-text">
-          PROJETOS
-        </h1>
-        <h1 className="text-4xl font-medium text-light-text dark:text-dark-text">
-          {cardsData.length}
-        </h1>
+    <div className="flex flex-col items-center justify-center text-center text-light-text dark:text-dark-text relative z-10">
+      <div className="relative">
+        <h1 className="text-6xl font-bold tracking-widest">ERRO</h1>
+        <p className="text-[10rem] font-bold text-opacity-80">404</p>
       </div>
-      {cardsData.map((card, index) => (
-        <ProjectListCard
-          key={index}
-          image={card.image}
-          title={card.title}
-          date={card.date}
-          description={card.description}
-          info={card.info}
-        />
-      ))}
+      <a
+        href="/portfolio"
+        className="mt-4 text-lg font-medium focus:outline-none hover:text-light-textHover dark:hover:text-dark-textHover"
+      >
+        → voltar para o inicio
+      </a>
     </div>
   );
 };

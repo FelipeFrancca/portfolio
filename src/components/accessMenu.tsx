@@ -12,17 +12,17 @@ const AccessMenu: React.FC<AccessMenuProps> = ({ isOpen, onClose, className }) =
   return (
     <div className={`fixed inset-0 z-50 flex items-center justify-around ${className || ""}`}>
       <div className="text-center">
-        <ul className="space-y-6 text-white text-3xl font-bold">
-          <li>01 HOME</li>
-          <li>02 WORK</li>
-          <li>03 ABOUT</li>
-          <li>04 CONTACT</li>
+        <ul className="space-y-6 text-3xl font-bold text-light-text dark:text-dark-text">
+          <li><a href="/portfolio">INICIO</a></li>
+          <li><a href="/projects">PROJETOS</a></li>
+          <li><a href="/about">SOBRE MIM</a></li>
+          <li><a href="/portfolio">CONTATO</a></li>
         </ul>
         <div className="mt-8 flex justify-center space-x-8 text-lg">
-          <a href="#instagram" className="text-gray-300 hover:text-white">
+          <a href="https://github.com/felipeFrancca" target="blank" className="text-light-text dark:text-dark-text hover:text-light-textHover dark:hover:text-dark-textHover">
             ↗ GitHub
           </a>
-          <a href="#behance" className="text-gray-300 hover:text-white">
+          <a href="https://www.linkedin.com/in/felipe-françaa" target="blank" className="text-light-text dark:text-dark-text hover:text-light-textHover dark:hover:text-dark-textHover">
             ↗ LinkedIn
           </a>
         </div>

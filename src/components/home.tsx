@@ -15,13 +15,13 @@ export default function Home() {
         </p>
         <div className="flex space-x-6 mt-6">
           <a
-            href="#projects"
+            href="/projects"
             className="text-lg font-medium text-light-text dark:text-dark-text hover:text-light-textHover dark:hover:text-dark-textHover transition-colors"
           >
             → Veja meus projetos
           </a>
           <a
-            href="#about"
+            href="/about"
             className="text-lg font-medium text-light-text dark:text-dark-text hover:text-light-textHover dark:hover:text-dark-textHover transition-colors"
           >
             → Sobre mim

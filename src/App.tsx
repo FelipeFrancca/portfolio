@@ -39,7 +39,9 @@ export default function App() {
       className={`flex justify-center relative min-h-screen overflow-hidden bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text`}
     >
       <div className="fixed w-full flex justify-between items-center px-20 top-16 z-40">
-        <img src={LogoStructure} alt="Logo" className="w-16 h-16" />
+        <a href="/portfolio">
+          <img src={LogoStructure} alt="Logo" className="w-16 h-16" />
+        </a>
         <div className="flex items-center space-x-4">
           <Typography className="text-sm font-medium cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover">
             pt-BR
@@ -66,11 +68,11 @@ export default function App() {
         <AppRoutes />
       </div>
 
+      {/* Remove o evento de clique na área externa */}
       <div
         className={`fixed inset-0 z-30 flex justify-center items-center transition-opacity duration-300 ${
           menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
-        onClick={() => setMenuOpen(false)}
       >
         <AccessMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
       </div>
