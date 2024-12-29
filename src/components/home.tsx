@@ -3,7 +3,10 @@ import React from "react";
 export default function Home() {
   return (
     <div>
-      <div className="relative z-10 flex flex-col items-center justify-center text-center" style={{ height: "calc(100% - 13rem)" }}>
+      <div
+        className="relative z-10 flex flex-col items-center justify-center text-center"
+        style={{ height: "calc(100% - 13rem)" }}
+      >
         <h1 className="text-4xl md:text-5xl font-bold leading-tight text-light-text dark:text-dark-text transition-colors">
           Oi, meu nome é <span>Felipe França</span>
         </h1>
@@ -16,15 +19,19 @@ export default function Home() {
         <div className="flex space-x-6 mt-6">
           <a
             href="/projects"
-            className="text-lg font-medium text-light-text dark:text-dark-text hover:text-light-textHover dark:hover:text-dark-textHover transition-colors"
+            className="text-lg relative z-10 font-semibold cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover 
+    after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
+    hover:after:w-full after:transition-all after:duration-300"
           >
             → Veja meus projetos
           </a>
           <a
             href="/about"
-            className="text-lg font-medium text-light-text dark:text-dark-text hover:text-light-textHover dark:hover:text-dark-textHover transition-colors"
+            className="text-lg relative z-10 font-semibold cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover 
+    after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
+    hover:after:w-full after:transition-all after:duration-300"
           >
-            → Sobre mim
+            → Saiba mais sobre mim
           </a>
         </div>
       </div>
