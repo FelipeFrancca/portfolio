@@ -3,13 +3,13 @@ import ImgMe from "../assets/img/me.png";
 
 const AboutMe: React.FC = () => {
   return (
-    <div className="flex items-center justify-center text-light-text dark:text-dark-text">
+    <div className="flex p-5 items-center justify-center text-light-text dark:text-dark-text">
       <div className="flex flex-col md:flex-row w-full max-w-6xl items-center">
         <div className="flex-1 relative mb-8 md:mb-0 md:mr-8">
           <img
             src={ImgMe}
             alt="Me"
-            className="w-full h-auto max-h-[80vh] object-cover rounded-md shadow-lg"
+            className="relative z-10 w-full h-auto max-h-[80vh] object-cover object-top rounded-md shadow-lg"
           />
         </div>
 
@@ -35,7 +35,7 @@ const AboutMe: React.FC = () => {
             className="text-lg relative z-10 font-semibold cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover 
     after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
     hover:after:w-full after:transition-all after:duration-300"
->
+          >
             ↓ Currículo
           </a>
         </div>
