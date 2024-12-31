@@ -1,4 +1,4 @@
-import { TranslationTypes } from "../types/translationTypes";
+import { TranslationTypes } from "../../types/translationTypes";
 
 const ptBR: TranslationTypes = {
   toggleLanguage: "EN",
@@ -27,6 +27,19 @@ const ptBR: TranslationTypes = {
   backToHome: "Voltar para o inicio",
 
   socialMedia: "Redes sociais",
+
+  projectsTitle1: "Página de login",
+  projectsDate1: "28/10/2023",
+  projectsDescription1: "Uma simples página de login criada para praticar noções de design e interface do usuário.",
+  projectsTitle2: "Fake Trello",
+  projectsDate2: "05/04/2024",
+  projectsDescription2: "Projeto kanban desenvolvido em React.js para por em prática habilidades de drag and drop com layout baseado no site Trello.",
+  projectsTitle3: "Consumo de API pública",
+  projectsDate3: "24/07/2024",
+  projectsDescription3: "Praticando consumo de API contendo uma lista de personagens do filme Start wars, onde existe informações públicas e privadas, sendo possivel acessar as informações privadas através de um login com dados mocados.",
+  projectsTitle4: "Página portfolio simples",
+  projectsDate4: "05/04/2024",
+  projectsDescription4: "Projeto de portfolio simples elaborado para minha esposa divulgar seus links de revenda de cosmeticos, utilizando axios, useEffect e useState para consumir uma planilha do google sheets.",
 };
 
 export default ptBR;

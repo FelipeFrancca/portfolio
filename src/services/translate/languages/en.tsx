@@ -1,4 +1,4 @@
-import { TranslationTypes } from "../types/translationTypes";
+import { TranslationTypes } from "../../types/translationTypes";
 
 const en: TranslationTypes = {
   toggleLanguage: "pt-BR",
@@ -27,6 +27,19 @@ const en: TranslationTypes = {
   backToHome: "Back to home",
 
   socialMedia: "Social Media",
+
+  projectsTitle1: "Login Page",
+  projectsDate1: "10/28/2023",
+  projectsDescription1: "A simple login page created to practice design and user interface skills.",
+  projectsTitle2: "Fake Trello",
+  projectsDate2: "04/05/2024",
+  projectsDescription2: "Kanban project developed in React.js to put drag and drop skills into practice with a layout based on the Trello website.",
+  projectsTitle3: "Public API consumption",
+  projectsDate3: "07/24/2024",
+  projectsDescription3: "Practicing API consumption containing a list of characters from the film Start Wars, where there is public and private information, making it possible to access private information through a login with modified data.",
+  projectsTitle4: "Simple portfolio page",
+  projectsDate4: "04/05/2024",
+  projectsDescription4: "Simple portfolio project designed for my wife to promote her cosmetics resale links, using axios, useEffect and useState to consume a Google Sheets spreadsheet.",
 };
 
 export default en;

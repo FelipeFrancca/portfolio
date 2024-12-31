@@ -1,13 +1,9 @@
 import React from "react";
+import { AccessMenuProps } from '../services/types/AccessMenuTypes';
 import { useLocalization } from "../services/translate/LocalizationProvider";
-import ptBR from "../services/translate/pt_br";
-import en from "../services/translate/en";
-
-interface AccessMenuProps {
-  isOpen: boolean;
-  onClose: () => void;
-  className?: string;
-}
+import { usefulLinks } from '../services/routes/usefulLinks';
+import ptBR from "../services/translate/languages/pt_br";
+import en from "../services/translate/languages/en";
 
 const AccessMenu: React.FC<AccessMenuProps> = ({ isOpen, onClose, className }) => {
   const { locale} = useLocalization();
@@ -63,7 +59,7 @@ const AccessMenu: React.FC<AccessMenuProps> = ({ isOpen, onClose, className }) =
 
 <div className="mt-8 flex justify-center space-x-8 text-lg">
   <a
-    href="https://github.com/felipeFrancca"
+    href={usefulLinks.githubLink}
     target="blank"
     className="relative text-light-text dark:text-dark-text hover:text-light-textHover dark:hover:text-dark-textHover 
       after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
@@ -72,7 +68,7 @@ const AccessMenu: React.FC<AccessMenuProps> = ({ isOpen, onClose, className }) =
     ↗ {translations.github}
   </a>
   <a
-    href="https://www.linkedin.com/in/felipe-françaa"
+    href={usefulLinks.linkedinLink}
     target="blank"
     className="relative text-light-text dark:text-dark-text hover:text-light-textHover dark:hover:text-dark-textHover 
       after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 

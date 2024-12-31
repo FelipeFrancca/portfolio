@@ -25,4 +25,17 @@ export interface TranslationTypes {
   backToHome: string;
 
   socialMedia: string;
+
+  projectsTitle1: string;
+  projectsDate1: string;
+  projectsDescription1: string;
+  projectsTitle2: string;
+  projectsDate2: string;
+  projectsDescription2: string;
+  projectsTitle3: string;
+  projectsDate3: string;
+  projectsDescription3: string;
+  projectsTitle4: string;
+  projectsDate4: string;
+  projectsDescription4: string;
 }

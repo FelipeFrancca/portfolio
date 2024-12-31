@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocalization } from "../services/translate/LocalizationProvider";
-import ptBR from "../services/translate/pt_br";
-import en from "../services/translate/en";
+import ptBR from "../services/translate/languages/pt_br";
+import en from "../services/translate/languages/en";
 
 export default function Home() {
   const { locale} = useLocalization();

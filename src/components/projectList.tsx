@@ -1,9 +1,12 @@
 import React from "react";
 import Img1 from "../assets/img/img1.png";
+import Img2 from "../assets/img/img2.png";
+import Img3 from "../assets/img/img3.png";
+import Img4 from "../assets/img/img4.png";
 import ProjectListCard from "./components/projectListCard";
 import { useLocalization } from "../services/translate/LocalizationProvider";
-import ptBR from "../services/translate/pt_br";
-import en from "../services/translate/en";
+import ptBR from "../services/translate/languages/pt_br";
+import en from "../services/translate/languages/en";
 
 const RevealCards: React.FC = () => {
   const { locale } = useLocalization();
@@ -12,40 +15,36 @@ const RevealCards: React.FC = () => {
   const cardsData = [
     {
       image: Img1,
-      title: "Página de login",
-      date: "28/10/2023",
-      description:
-        "Uma simples pagina de login criada para praticar noções de design e interface do usuário.",
+      title: translations.projectsTitle1,
+      date: translations.projectsDate1,
+      description: translations.projectsDescription1,
       info: translations.info,
     },
     {
-      image: Img1,
-      title: "Fake Trello",
-      date: "05/04/2024",
-      description:
-        'Projeto kanban desenvolvido em React.js para por em prática habilidades de "drag and drop" com layout baseado no site Trello.',
+      image: Img2,
+      title: translations.projectsTitle2,
+      date: translations.projectsDate2,
+      description: translations.projectsDescription2,
       info: translations.info,
     },
     {
-      image: Img1,
-      title: "Página de login",
-      date: "28/10/2023",
-      description:
-        "Uma simples pagina de login criada para praticar noções de design e interface do usuário.",
+      image: Img3,
+      title: translations.projectsTitle3,
+      date: translations.projectsDate3,
+      description: translations.projectsDescription3,
       info: translations.info,
     },
     {
-      image: Img1,
-      title: "Fake Trello",
-      date: "05/04/2024",
-      description:
-        'Projeto kanban desenvolvido em React.js para por em prática habilidades de "drag and drop" com layout baseado no site Trello.',
+      image: Img4,
+      title: translations.projectsTitle4,
+      date: translations.projectsDate4,
+      description: translations.projectsDescription4,
       info: translations.info,
     },
   ];
 
   return (
-    <div className="flex flex-col w-3/4 items-center gap-12 justify-center">
+    <div className="relative z-10 flex flex-col w-3/4 items-center gap-12 justify-center">
       <div className="flex justify-between items-center w-full">
         <h1 className="text-4xl font-medium text-light-text dark:text-dark-text">
           {translations.projects}
