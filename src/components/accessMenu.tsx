@@ -1,4 +1,7 @@
 import React from "react";
+import { useLocalization } from "../services/translate/LocalizationProvider";
+import ptBR from "../services/translate/pt_br";
+import en from "../services/translate/en";
 
 interface AccessMenuProps {
   isOpen: boolean;
@@ -7,6 +10,9 @@ interface AccessMenuProps {
 }
 
 const AccessMenu: React.FC<AccessMenuProps> = ({ isOpen, onClose, className }) => {
+  const { locale} = useLocalization();
+  const translations = locale === "pt-BR" ? ptBR : en;
+
   if (!isOpen) return null;
 
   return (
@@ -20,7 +26,7 @@ const AccessMenu: React.FC<AccessMenuProps> = ({ isOpen, onClose, className }) =
         after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
         hover:after:w-full after:transition-all after:duration-300"
     >
-      INICIO
+      {translations.home}
     </a>
   </li>
   <li>
@@ -30,7 +36,7 @@ const AccessMenu: React.FC<AccessMenuProps> = ({ isOpen, onClose, className }) =
         after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
         hover:after:w-full after:transition-all after:duration-300"
     >
-      PROJETOS
+      {translations.projects}
     </a>
   </li>
   <li>
@@ -40,7 +46,7 @@ const AccessMenu: React.FC<AccessMenuProps> = ({ isOpen, onClose, className }) =
         after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
         hover:after:w-full after:transition-all after:duration-300"
     >
-      SOBRE MIM
+      {translations.about}
     </a>
   </li>
   <li>
@@ -50,7 +56,7 @@ const AccessMenu: React.FC<AccessMenuProps> = ({ isOpen, onClose, className }) =
         after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
         hover:after:w-full after:transition-all after:duration-300"
     >
-      CONTATO
+      {translations.contact}
     </a>
   </li>
 </ul>
@@ -63,7 +69,7 @@ const AccessMenu: React.FC<AccessMenuProps> = ({ isOpen, onClose, className }) =
       after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
       hover:after:w-full after:transition-all after:duration-300"
   >
-    ↗ GitHub
+    ↗ {translations.github}
   </a>
   <a
     href="https://www.linkedin.com/in/felipe-françaa"
@@ -72,7 +78,7 @@ const AccessMenu: React.FC<AccessMenuProps> = ({ isOpen, onClose, className }) =
       after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
       hover:after:w-full after:transition-all after:duration-300"
   >
-    ↗ LinkedIn
+    ↗ {translations.linkedin}
   </a>
 </div>
 

@@ -1,8 +1,11 @@
-// src/components/LocalizationProvider.tsx
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import ptBR from "./pt_br"; 
+import en from "./en"; 
+import { TranslationTypes } from "../types/translationTypes";
 
 interface LocalizationContextProps {
     locale: string;
+    translations: TranslationTypes; 
     toggleLocale: () => void;
 }
 
@@ -13,14 +16,28 @@ interface LocalizationProviderProps {
 }
 
 const LocalizationProvider: React.FC<LocalizationProviderProps> = ({ children }) => {
-    const [locale, setLocale] = useState<string>('pt-BR');
+    const getInitialLocale = (): string => {
+        const savedLocale = localStorage.getItem("locale");
+        return savedLocale || "pt-BR";
+    };
+
+    const [locale, setLocale] = useState<string>(getInitialLocale);
+    const [translations, setTranslations] = useState<TranslationTypes>(
+        locale === "pt-BR" ? ptBR : en
+    );
+
+    useEffect(() => {
+        
+        setTranslations(locale === "pt-BR" ? ptBR : en);
+        localStorage.setItem("locale", locale);
+    }, [locale]);
 
     const toggleLocale = () => {
-        setLocale((prevLocale) => (prevLocale === 'pt-BR' ? 'en' : 'pt-BR'));
+        setLocale((prevLocale) => (prevLocale === "pt-BR" ? "en" : "pt-BR"));
     };
 
     return (
-        <LocalizationContext.Provider value={{ locale, toggleLocale }}>
+        <LocalizationContext.Provider value={{ locale, translations, toggleLocale }}>
             {children}
         </LocalizationContext.Provider>
     );
@@ -29,7 +46,7 @@ const LocalizationProvider: React.FC<LocalizationProviderProps> = ({ children })
 export const useLocalization = (): LocalizationContextProps => {
     const context = useContext(LocalizationContext);
     if (!context) {
-        throw new Error('useLocalization must be used within a LocalizationProvider');
+        throw new Error("useLocalization must be used within a LocalizationProvider");
     }
     return context;
 };

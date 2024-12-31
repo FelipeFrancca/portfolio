@@ -1,8 +1,14 @@
 import React from "react";
 import Img1 from "../assets/img/img1.png";
 import ProjectListCard from "./components/projectListCard";
+import { useLocalization } from "../services/translate/LocalizationProvider";
+import ptBR from "../services/translate/pt_br";
+import en from "../services/translate/en";
 
 const RevealCards: React.FC = () => {
+  const { locale } = useLocalization();
+  const translations = locale === "pt-BR" ? ptBR : en;
+
   const cardsData = [
     {
       image: Img1,
@@ -10,7 +16,7 @@ const RevealCards: React.FC = () => {
       date: "28/10/2023",
       description:
         "Uma simples pagina de login criada para praticar noções de design e interface do usuário.",
-      info: "Expandir",
+      info: translations.info,
     },
     {
       image: Img1,
@@ -18,7 +24,7 @@ const RevealCards: React.FC = () => {
       date: "05/04/2024",
       description:
         'Projeto kanban desenvolvido em React.js para por em prática habilidades de "drag and drop" com layout baseado no site Trello.',
-      info: "Expandir",
+      info: translations.info,
     },
     {
       image: Img1,
@@ -26,7 +32,7 @@ const RevealCards: React.FC = () => {
       date: "28/10/2023",
       description:
         "Uma simples pagina de login criada para praticar noções de design e interface do usuário.",
-      info: "Expandir",
+      info: translations.info,
     },
     {
       image: Img1,
@@ -34,7 +40,7 @@ const RevealCards: React.FC = () => {
       date: "05/04/2024",
       description:
         'Projeto kanban desenvolvido em React.js para por em prática habilidades de "drag and drop" com layout baseado no site Trello.',
-      info: "Expandir",
+      info: translations.info,
     },
   ];
 
@@ -42,7 +48,7 @@ const RevealCards: React.FC = () => {
     <div className="flex flex-col w-3/4 items-center gap-12 justify-center">
       <div className="flex justify-between items-center w-full">
         <h1 className="text-4xl font-medium text-light-text dark:text-dark-text">
-          PROJETOS
+          {translations.projects}
         </h1>
         <h1 className="text-4xl font-medium text-light-text dark:text-dark-text">
           {cardsData.length}

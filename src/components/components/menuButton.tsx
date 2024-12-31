@@ -5,7 +5,7 @@ interface MenuButtonProps {
 }
 
 const MenuButton: React.FC<MenuButtonProps> = ({ onClick }) => {
-  const [isHovered, setIsHovered] = useState(false); // Controle de hover global
+  const [isHovered, setIsHovered] = useState(false); 
   const [isChecked, setIsChecked] = useState(false);
 
   const handleToggle = () => {
@@ -13,8 +13,8 @@ const MenuButton: React.FC<MenuButtonProps> = ({ onClick }) => {
     onClick();
   };
 
-  const handleMouseEnter = () => setIsHovered(true); // Aciona hover global
-  const handleMouseLeave = () => setIsHovered(false); // Remove hover global
+  const handleMouseEnter = () => setIsHovered(true); 
+  const handleMouseLeave = () => setIsHovered(false); 
 
   return (
     <div className="flex items-center justify-center">
@@ -23,8 +23,8 @@ const MenuButton: React.FC<MenuButtonProps> = ({ onClick }) => {
         aria-label="Display the menu"
         className="relative w-8 h-8 flex items-center justify-center cursor-pointer"
         onClick={handleToggle}
-        onMouseEnter={handleMouseEnter} // Quando o mouse entra em qualquer span
-        onMouseLeave={handleMouseLeave} // Quando o mouse sai de qualquer span
+        onMouseEnter={handleMouseEnter} 
+        onMouseLeave={handleMouseLeave} 
       >
         <span
           className={`absolute block h-1 w-6 ${

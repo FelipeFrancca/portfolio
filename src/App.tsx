@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from "react";
 import { Typography } from "@mui/material";
 import MenuButton from "./components/components/menuButton";
@@ -8,8 +7,6 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import AppRoutes from "./services/routes/routes";
 import { useLocalization } from "./services/translate/LocalizationProvider";
-import ptBR from "./services/translate/pt_br";
-import en from "./services/translate/en";
 
 export default function App() {
     const getInitialTheme = () => {
@@ -20,9 +17,7 @@ export default function App() {
         return window.matchMedia("(prefers-color-scheme: dark)").matches;
     };
 
-    const { locale, toggleLocale } = useLocalization();
-    const translations = locale === "pt-BR" ? ptBR : en;
-
+    const { locale, toggleLocale, translations } = useLocalization();
     const [darkMode, setDarkMode] = useState(getInitialTheme);
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -42,7 +37,9 @@ export default function App() {
     };
 
     return (
-        <div className={`flex justify-center relative min-h-screen overflow-hidden bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text`}>
+        <div
+            className={`flex justify-center relative min-h-screen overflow-hidden bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text`}
+        >
             <div className="fixed w-full flex justify-between items-center px-20 top-16 z-40">
                 <a href="/portfolio">
                     <img src={LogoStructure} alt="Logo" className="w-16 h-16" />
@@ -68,11 +65,19 @@ export default function App() {
                 </div>
             </div>
 
-            <div className={`flex justify-center w-full mt-52 mb-10 transition-all duration-300 ${menuOpen ? "hidden" : "block"}`}>
+            <div
+                className={`flex justify-center w-full mt-52 mb-10 transition-all duration-300 ${
+                    menuOpen ? "hidden" : "block"
+                }`}
+            >
                 <AppRoutes />
             </div>
 
-            <div className={`fixed inset-0 z-30 flex justify-center items-center transition-opacity duration-300 ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}>
+            <div
+                className={`fixed inset-0 z-30 flex justify-center items-center transition-opacity duration-300 ${
+                    menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                }`}
+            >
                 <AccessMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
             </div>
 
