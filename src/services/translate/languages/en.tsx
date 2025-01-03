@@ -12,7 +12,8 @@ const en: TranslationTypes = {
   aboutMe: "About me",
   aboutMeDescOne: "Full stack developer with 3 years of experience, focused on creating accessible and responsive systems. My journey began in 2022, when I made a career transition from technical support to web development.",
   aboutMeDescTwo: "Since then, I have been working hard and constantly seeking personal improvement, falling more in love with what I do every day. I have experience with technologies derived from Javascript, especially TypeScript, React, Next and also with PHP aimed at Apache hosting. I've also used Java, C++, Nest, Node, and I've also had contact with creating Docker images.",
-  resume: "Resume",
+  aboutMeDescTree: "Likewise, it is important to highlight my knowledge of audiovisual production using software such as Photoshop and Davinci Resolve, which contributes positively to frontend development.",
+  resume: "See my resume",
   resumeWay: "/portfolio/ffResumeEN.pdf",
 
   home: "HOME",

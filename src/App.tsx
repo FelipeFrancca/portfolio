@@ -17,7 +17,7 @@ export default function App() {
         return window.matchMedia("(prefers-color-scheme: dark)").matches;
     };
 
-    const { locale, toggleLocale, translations } = useLocalization();
+    const { toggleLocale, translations } = useLocalization();
     const [darkMode, setDarkMode] = useState(getInitialTheme);
     const [menuOpen, setMenuOpen] = useState(false);
 

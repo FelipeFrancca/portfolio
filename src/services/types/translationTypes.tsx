@@ -10,6 +10,7 @@ export interface TranslationTypes {
   aboutMe: string;
   aboutMeDescOne: string;
   aboutMeDescTwo: string;
+  aboutMeDescTree: string;
   resume: string;
   resumeWay: string;
 

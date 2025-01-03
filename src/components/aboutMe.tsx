@@ -15,7 +15,7 @@ const AboutMe: React.FC = () => {
           <img
             src={ImgMe}
             alt="Me"
-            className="relative z-10 w-full h-auto max-h-[80vh] object-cover object-top rounded-md shadow-lg"
+            className="relative z-10 w-full h-auto object-cover object-top rounded-md shadow-lg"
           />
         </div>
 
@@ -28,17 +28,30 @@ const AboutMe: React.FC = () => {
             <br />
             <br />
             {translations.aboutMeDescTwo}
+            <br />
+            <br />
+            {translations.aboutMeDescTree}
           </p>
-          <a
-            href={translations.resumeWay}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-lg relative z-10 font-semibold cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover 
-            after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
-            hover:after:w-full after:transition-all after:duration-300"
-          >
-            ↓ {translations.resume}
-          </a>
+          <div className="flex space-x-6 mt-6">
+            <a
+              href={translations.resumeWay}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg relative z-10 font-semibold cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover 
+              after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
+              hover:after:w-full after:transition-all after:duration-300"
+            >
+              → {translations.resume}
+            </a>
+            <a
+              href="/projects"
+              className="text-lg relative z-10 font-semibold cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover 
+              after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
+              hover:after:w-full after:transition-all after:duration-300"
+            >
+              → {translations.seeProjects}
+            </a>
+          </div>
         </div>
       </div>
     </div>

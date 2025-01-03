@@ -10,9 +10,10 @@ const ptBR: TranslationTypes = {
   knowMore: "Saiba mais sobre mim",
 
   aboutMe: "Sobre mim",
-  aboutMeDescOne: "Desenvolvedor full stack com 3 anos de experiência, focado em criar sistemas acessíveis e responsivos. Minha trajetória começou em 2022, quando fiz a transição de carreira do suporte técnico para o desenvolvimento web.",
-  aboutMeDescTwo: "Desde então, tenho trabalhado duro e busco meu aprimoramento pessoal constantemente, me apaixonando a cada dia mais pelo o que faço. Tenho experiência com tecnologias derivadas do Javascript, especialmente TypeScript, React, Next e também com PHP voltado para hospedagens apache. Também já utilizei Java, C++, Nest, Node, e também tive contato com a criação de imagens Docker.",
-  resume: "Curriculo",
+  aboutMeDescOne: "Desenvolvedor full stack focado em criar sistemas acessíveis e responsivos. Minha trajetória começou em 2022, quando fiz a transição de carreira do suporte técnico para o desenvolvimento web.",
+  aboutMeDescTwo: "Desde então, tenho trabalhado duro e busco meu aprimoramento pessoal constantemente, me apaixonando a cada dia mais pelo que faço. Tenho experiência com tecnologias derivadas do Javascript, especialmente TypeScript, React e Next, e também com PHP voltado para hospedagens Apache. No backend já tenho experiência com Java, C++, Nest e Node, além disso, já atuei com a criação de imagens Docker e gerenciamento de bancos de dados relacionais.",
+  aboutMeDescTree: "Igualmente, é relevante destacar meu conhecimento com a produção audiovisual utilizando softwares como Photoshop e DaVinci Resolve, que contribui positivamente no desenvolvimento frontend.",
+  resume: "Veja meu curriculo",
   resumeWay: "/portfolio/ffResumeptBR.pdf",
   
   home: "INICIO",
