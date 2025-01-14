@@ -7,6 +7,7 @@ import ProjectListCard from "./components/projectListCard";
 import { useLocalization } from "../services/translate/LocalizationProvider";
 import ptBR from "../services/translate/languages/pt_br";
 import en from "../services/translate/languages/en";
+import { usefulLinks } from "../services/routes/usefulLinks";
 
 const RevealCards: React.FC = () => {
   const { locale } = useLocalization();
@@ -19,6 +20,8 @@ const RevealCards: React.FC = () => {
       date: translations.projectsDate1,
       description: translations.projectsDescription1,
       info: translations.info,
+      gitLink: usefulLinks.linkGit1,
+      projectLinkDesc: translations.projectLinkDesc,
     },
     {
       image: Img2,
@@ -26,6 +29,8 @@ const RevealCards: React.FC = () => {
       date: translations.projectsDate2,
       description: translations.projectsDescription2,
       info: translations.info,
+      gitLink: usefulLinks.linkGit2,
+      projectLinkDesc: translations.projectLinkDesc,
     },
     {
       image: Img3,
@@ -33,6 +38,8 @@ const RevealCards: React.FC = () => {
       date: translations.projectsDate3,
       description: translations.projectsDescription3,
       info: translations.info,
+      gitLink: usefulLinks.linkGit3,
+      projectLinkDesc: translations.projectLinkDesc,
     },
     {
       image: Img4,
@@ -40,6 +47,8 @@ const RevealCards: React.FC = () => {
       date: translations.projectsDate4,
       description: translations.projectsDescription4,
       info: translations.info,
+      gitLink: usefulLinks.linkGit4,
+      projectLinkDesc: translations.projectLinkDesc,
     },
   ];
 
@@ -61,6 +70,8 @@ const RevealCards: React.FC = () => {
           date={card.date}
           description={card.description}
           info={card.info}
+          gitLink={card.gitLink}
+          projectLinkDesc={card.projectLinkDesc}
         />
       ))}
     </div>

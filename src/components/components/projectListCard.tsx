@@ -7,6 +7,8 @@ type CardProps = {
   date: string;
   description: string;
   info: string;
+  gitLink: string;
+  projectLinkDesc: string;
 };
 
 const ProjectListCard: React.FC<CardProps> = ({
@@ -15,6 +17,8 @@ const ProjectListCard: React.FC<CardProps> = ({
   date,
   description,
   info,
+  gitLink,
+  projectLinkDesc,
 }) => {
   return (
     <div className="group relative w-full h-72 bg-light-background dark:bg-dark-background rounded-[40px] shadow-xl transition-all duration-500 overflow-hidden hover:h-[420px]">
@@ -44,6 +48,10 @@ const ProjectListCard: React.FC<CardProps> = ({
         <p className="relative mt-6 text-light-text dark:text-dark-text opacity-0 transition-opacity duration-500 group-hover:opacity-100">
           {description}
         </p>
+        <a className="relative z-10 font-semibold cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover 
+          after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
+          hover:after:w-full after:transition-all after:duration-300" href={gitLink} target="blank">{projectLinkDesc}
+        </a>
       </div>
     </div>
   );
