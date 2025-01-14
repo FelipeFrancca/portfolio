@@ -1,13 +1,13 @@
 import React from "react";
-import Img1 from "../assets/img/img1.png";
-import Img2 from "../assets/img/img2.png";
-import Img3 from "../assets/img/img3.png";
-import Img4 from "../assets/img/img4.png";
-import ProjectListCard from "./components/projectListCard";
-import { useLocalization } from "../services/translate/LocalizationProvider";
-import ptBR from "../services/translate/languages/pt_br";
-import en from "../services/translate/languages/en";
-import { usefulLinks } from "../services/routes/usefulLinks";
+import Img1 from "../../assets/img/img1.png";
+import Img2 from "../../assets/img/img2.png";
+import Img3 from "../../assets/img/img3.png";
+import Img4 from "../../assets/img/img4.png";
+import ProjectListCard from "../components/projectListCard";
+import { useLocalization } from "../../services/translate/LocalizationProvider";
+import ptBR from "../../services/translate/languages/pt_br";
+import en from "../../services/translate/languages/en";
+import { usefulLinks } from "../../services/routes/usefulLinks";
 
 const RevealCards: React.FC = () => {
   const { locale } = useLocalization();

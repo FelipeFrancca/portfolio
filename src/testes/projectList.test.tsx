@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import ProjectList from "../components/projectList";
+import ProjectList from "../components/pages/projectList";
 import "@testing-library/jest-dom";
 
 const projects = [

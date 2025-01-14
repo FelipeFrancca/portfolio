@@ -1,8 +1,8 @@
 import React from "react";
-import { useLocalization } from "../services/translate/LocalizationProvider";
-import { usefulLinks } from "../services/routes/usefulLinks";
-import ptBR from "../services/translate/languages/pt_br";
-import en from "../services/translate/languages/en";
+import { useLocalization } from "../../services/translate/LocalizationProvider";
+import { usefulLinks } from "../../services/routes/usefulLinks";
+import ptBR from "../../services/translate/languages/pt_br";
+import en from "../../services/translate/languages/en";
 
 const Contact: React.FC = () => {
   const { locale } = useLocalization();
