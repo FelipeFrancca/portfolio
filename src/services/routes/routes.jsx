@@ -14,8 +14,8 @@ const AppRoutes = () => {
         <Route path="/portfolio/projects" element={<ProjectList />} />
         <Route path="/portfolio/about" element={<AboutMe />} />
         <Route path="/portfolio/contact" element={<Contact />} />
+        <Route path="/portfolio/*" element={<NotFound />} />
       </Route>
-      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
