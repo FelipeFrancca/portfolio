@@ -14,7 +14,6 @@ const Contact: React.FC = () => {
         {translations.contact}
       </h1>
       <div className="w-full max-w-4xl flex justify-between border-t border-light-text dark:border-dark-text pt-4">
-        {/* Mail Section */}
         <div className="flex flex-col">
           <h2 className="text-sm font-bold uppercase mb-2">Mail</h2>
           <a
@@ -29,7 +28,6 @@ const Contact: React.FC = () => {
           </a>
         </div>
 
-        {/* Social Media Section */}
         <div className="flex flex-col">
           <h2 className="text-sm font-bold uppercase mb-2">
             {translations.socialMedia}
