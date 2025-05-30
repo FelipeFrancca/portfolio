@@ -44,4 +44,8 @@ export interface TranslationTypes {
   projectsTitle4: string;
   projectsDate4: string;
   projectsDescription4: string;
+  
+  projectsTitle5: string;
+  projectsDate5: string;
+  projectsDescription5: string;
 }

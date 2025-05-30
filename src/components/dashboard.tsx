@@ -41,7 +41,7 @@ export default function Dashboard() {
       className={`flex justify-center relative min-h-screen overflow-hidden bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text`}
     >
       <div className="fixed w-full flex justify-between items-center px-20 top-16 z-40">
-        <a href="/portfolio">
+        <a href="/">
           <img src={LogoStructure} alt="Logo" className="w-16 h-16" />
         </a>
         <div className="flex items-center space-x-4">

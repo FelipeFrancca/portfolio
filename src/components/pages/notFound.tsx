@@ -14,7 +14,7 @@ const NotFound: React.FC = () => {
         <p className="text-[10rem] font-bold text-opacity-80">404</p>
       </div>
       <a
-        href="/portfolio"
+        href="/"
         className="text-lg relative z-10 font-semibold cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover 
     after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
     hover:after:w-full after:transition-all after:duration-300"

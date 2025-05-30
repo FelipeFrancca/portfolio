@@ -24,7 +24,7 @@ export default function Home() {
         </p>
         <div className="flex space-x-6 mt-6">
           <a
-            href="/portfolio/projects"
+            href="/projects"
             className="text-lg relative z-10 font-semibold cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover 
     after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
     hover:after:w-full after:transition-all after:duration-300"
@@ -32,7 +32,7 @@ export default function Home() {
             → {translations.seeProjects}
           </a>
           <a
-            href="/portfolio/about"
+            href="/about"
             className="text-lg relative z-10 font-semibold cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover 
     after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
     hover:after:w-full after:transition-all after:duration-300"

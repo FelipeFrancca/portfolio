@@ -17,7 +17,7 @@ const AccessMenu: React.FC<AccessMenuProps> = ({ isOpen, onClose, className }) =
       <ul className="space-y-6 text-3xl font-bold text-light-text dark:text-dark-text">
   <li>
     <a
-      href="/portfolio"
+      href="/"
       className="relative z-10 cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover 
         after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
         hover:after:w-full after:transition-all after:duration-300"
@@ -27,7 +27,7 @@ const AccessMenu: React.FC<AccessMenuProps> = ({ isOpen, onClose, className }) =
   </li>
   <li>
     <a
-      href="/portfolio/projects"
+      href="/projects"
       className="relative z-10 cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover 
         after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
         hover:after:w-full after:transition-all after:duration-300"
@@ -37,7 +37,7 @@ const AccessMenu: React.FC<AccessMenuProps> = ({ isOpen, onClose, className }) =
   </li>
   <li>
     <a
-      href="/portfolio/about"
+      href="/about"
       className="relative z-10 cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover 
         after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
         hover:after:w-full after:transition-all after:duration-300"
@@ -47,7 +47,7 @@ const AccessMenu: React.FC<AccessMenuProps> = ({ isOpen, onClose, className }) =
   </li>
   <li>
     <a
-      href="/portfolio/contact"
+      href="/contact"
       className="relative z-10 cursor-pointer hover:text-light-textHover dark:hover:text-dark-textHover 
         after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current 
         hover:after:w-full after:transition-all after:duration-300"

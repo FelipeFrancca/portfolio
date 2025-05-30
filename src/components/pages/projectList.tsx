@@ -3,6 +3,7 @@ import Img1 from "../../assets/img/img1.png";
 import Img2 from "../../assets/img/img2.png";
 import Img3 from "../../assets/img/img3.png";
 import Img4 from "../../assets/img/img4.png";
+import Img5 from "../../assets/img/img5.png";
 import ProjectListCard from "../components/projectListCard";
 import { useLocalization } from "../../services/translate/LocalizationProvider";
 import ptBR from "../../services/translate/languages/pt_br";
@@ -48,6 +49,15 @@ const RevealCards: React.FC = () => {
       description: translations.projectsDescription4,
       info: translations.info,
       gitLink: usefulLinks.linkGit4,
+      projectLinkDesc: translations.projectLinkDesc,
+    },
+    {
+      image: Img5,
+      title: translations.projectsTitle5,
+      date: translations.projectsDate5,
+      description: translations.projectsDescription5,
+      info: translations.info,
+      gitLink: usefulLinks.linkGit5,
       projectLinkDesc: translations.projectLinkDesc,
     },
   ];
